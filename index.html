@@ -26,6 +26,33 @@
 .chapter-analysis-row .bar-track{height:7px;background:var(--surface3)}
 .chapter-analysis-count{text-align:right;font-size:13px;font-weight:850;font-variant-numeric:tabular-nums;white-space:nowrap}
 @media(max-width:600px){.chapter-analysis-panel{padding:13px}.chapter-analysis-list{grid-template-columns:1fr}.chapter-analysis-row{grid-template-columns:minmax(0,1.5fr) minmax(35px,.65fr) 88px;gap:8px;padding:10px 0}.chapter-analysis-title{font-size:12px}.chapter-analysis-count{font-size:12px}}
+
+/* Top 15 Botany topics: chapter colour key (seven distinct chapters). */
+.top15-panel{border:1px solid var(--line);border-radius:16px;background:linear-gradient(155deg,var(--surface),var(--surface2));padding:18px;margin:20px 0 24px;box-shadow:var(--shadow)}
+.top15-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:13px}
+.top15-head h2{font-size:18px;line-height:1.35;margin:0;letter-spacing:-.02em}
+.top15-head p{font-size:12px;color:var(--muted);margin:5px 0 0}
+.top15-scroll{width:100%;overflow-x:auto;overscroll-behavior-x:contain;border:1px solid var(--line);border-radius:12px}
+.top15-table{width:100%;min-width:780px;border-collapse:collapse;font-size:13px;line-height:1.45}
+.top15-table th{background:var(--surface3);color:var(--text);font-size:12px;font-weight:800;text-align:left;padding:11px 12px;white-space:nowrap}
+.top15-table td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:middle}
+.top15-table tbody tr:hover{background:color-mix(in srgb,var(--teal) 5%,transparent)}
+.top15-table .top15-rank{width:42px;color:var(--muted);font-weight:800;text-align:center;font-variant-numeric:tabular-nums}
+.top15-table .top15-count{width:82px;text-align:center;font-weight:850;font-size:14px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.top15-table .top15-last{width:160px;white-space:nowrap}
+.chapter-tag{display:inline-block;padding:4px 9px;border-radius:999px;border:1px solid;font-size:12px;font-weight:800;white-space:nowrap}
+.chapter-tag.micro{color:#60a5fa;background:rgba(59,130,246,.13);border-color:rgba(59,130,246,.42)}
+.chapter-tag.chem{color:#c4a7ff;background:rgba(139,92,246,.14);border-color:rgba(139,92,246,.45)}
+.chapter-tag.algae{color:#eabf43;background:rgba(234,179,8,.13);border-color:rgba(234,179,8,.45)}
+.chapter-tag.plantphys{color:#55d69a;background:rgba(34,197,94,.13);border-color:rgba(34,197,94,.42)}
+.chapter-tag.cell{color:#4dd6e8;background:rgba(6,182,212,.13);border-color:rgba(6,182,212,.45)}
+.chapter-tag.division{color:#fb8aa5;background:rgba(244,63,94,.13);border-color:rgba(244,63,94,.43)}
+.chapter-tag.tissue{color:#ffad72;background:rgba(249,115,22,.13);border-color:rgba(249,115,22,.44)}
+.top15-legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+.top15-legend .chapter-tag{font-size:11px}
+.top15-hint{font-size:11px;color:var(--muted);margin:10px 0 0}
+@media(max-width:600px){.top15-panel{padding:13px}.top15-head h2{font-size:16px}.top15-table{font-size:12px}}
+
 </style>
 </head>
 <body>
@@ -45,6 +72,21 @@
       <div class="chapter-analysis-list" id="chapterAnalysisList" aria-label="All chapters ranked by medical admission question count"></div>
       <p class="chapter-analysis-note">How to use this: the count and percentage for each chapter come from the supplied chapter-wise medical-question summary. This summary is separate from the topic-level M/MAT/D year references transcribed from the PDF below.</p>
     </section>
+
+    <section class="top15-panel" aria-labelledby="top15BotanyHeading">
+      <div class="top15-head">
+        <div><h2 id="top15BotanyHeading">বোটানিতে সবচেয়ে বেশি আসা ১৫ টি টপিক</h2><p>পুরো বোটানি · ছবিতে দেওয়া টপিক, অধ্যায়, উপস্থিতির সংখ্যা ও সর্বশেষ পরীক্ষার তথ্য</p></div>
+      </div>
+      <div class="top15-scroll" role="region" aria-label="বোটানির সর্বাধিক আসা ১৫টি টপিকের টেবিল" tabindex="0">
+        <table class="top15-table">
+          <thead><tr><th class="top15-rank">ক্রম</th><th>টপিক</th><th>অধ্যায়</th><th class="top15-count">কতবার</th><th class="top15-last">সর্বশেষ</th></tr></thead>
+          <tbody><tr><td class="top15-rank">1</td><td>ম্যালেরিয়ার পরজীবী (জীবনচক্র, সুপ্তাবস্থা, রক্তশূন্যতা)</td><td><span class="chapter-tag micro">অণুজীব</span></td><td class="top15-count">৪২</td><td class="top15-last">MBBS 23-24</td></tr><tr><td class="top15-rank">2</td><td>ভাইরাসজনিত রোগ ও DNA/RNA ভাইরাসের উদাহরণ</td><td><span class="chapter-tag micro">অণুজীব</span></td><td class="top15-count">২৯</td><td class="top15-last">MBBS & BDS 25-26</td></tr><tr><td class="top15-rank">3</td><td>ভাইরাসের বৈশিষ্ট্য ও গঠন (ভিরিয়ন, ক্যাপসিড, এনভেলপ)</td><td><span class="chapter-tag micro">অণুজীব</span></td><td class="top15-count">২৭</td><td class="top15-last">MBBS 24-25</td></tr><tr><td class="top15-rank">4</td><td>কার্বোহাইড্রেট (রিডিউসিং সুগার, সুক্রোজ, পলিস্যাকারাইড)</td><td><span class="chapter-tag chem">কোষ রসায়ন</span></td><td class="top15-count">২৩</td><td class="top15-last">AFMC 24-25</td></tr><tr><td class="top15-rank">5</td><td>ব্যাকটেরিয়ার গুরুত্ব ও ব্যাকটেরিয়াজনিত রোগ</td><td><span class="chapter-tag micro">অণুজীব</span></td><td class="top15-count">২১</td><td class="top15-last">MBBS & BDS 25-26</td></tr><tr><td class="top15-rank">6</td><td>ছত্রাকের বৈশিষ্ট্য, কোষপ্রাচীর ও সঞ্চিত খাদ্য</td><td><span class="chapter-tag algae">শৈবাল ও ছত্রাক</span></td><td class="top15-count">১৮</td><td class="top15-last">MBBS 20-21</td></tr><tr><td class="top15-rank">7</td><td>খনিজ লবণ পরিশোষণ ও শোষণ</td><td><span class="chapter-tag plantphys">উদ্ভিদ শারীরতত্ত্ব</span></td><td class="top15-count">১৮</td><td class="top15-last">MBBS & BDS 25-26</td></tr><tr><td class="top15-rank">8</td><td>সালোকসংশ্লেষণ: সমীকরণ, বর্ণক ও O₂-এর উৎস</td><td><span class="chapter-tag plantphys">উদ্ভিদ শারীরতত্ত্ব</span></td><td class="top15-count">১৮</td><td class="top15-last">MBBS 21-22</td></tr><tr><td class="top15-rank">9</td><td>নিউক্লিক অ্যাসিড (DNA ও RNA-এর গঠন)</td><td><span class="chapter-tag cell">কোষ ও এর গঠন</span></td><td class="top15-count">১৭</td><td class="top15-last">MBBS 24-25</td></tr><tr><td class="top15-rank">10</td><td>মাইটোসিসের পর্যায়সমূহ</td><td><span class="chapter-tag division">কোষ বিভাজন</span></td><td class="top15-count">১৭</td><td class="top15-last">MBBS 22-23</td></tr><tr><td class="top15-rank">11</td><td>মূলের অন্তর্গঠন (একবীজপত্রী/দ্বিবীজপত্রী মূল)</td><td><span class="chapter-tag tissue">টিস্যু ও টিস্যুতন্ত্র</span></td><td class="top15-count">১৭</td><td class="top15-last">MBBS & BDS 25-26</td></tr><tr><td class="top15-rank">12</td><td>গ্লাইকোলাইসিস ও অ্যাসিটাইল Co-A</td><td><span class="chapter-tag plantphys">উদ্ভিদ শারীরতত্ত্ব</span></td><td class="top15-count">১৭</td><td class="top15-last">MBBS & BDS 25-26</td></tr><tr><td class="top15-rank">13</td><td>প্লাস্টিড ও রঞ্জক</td><td><span class="chapter-tag cell">কোষ ও এর গঠন</span></td><td class="top15-count">১৬</td><td class="top15-last">AFMC 21-22</td></tr><tr><td class="top15-rank">14</td><td>জাইলেম ও ফ্লোয়েমের উপাদান</td><td><span class="chapter-tag tissue">টিস্যু ও টিস্যুতন্ত্র</span></td><td class="top15-count">১৬</td><td class="top15-last">AFMC 25-26</td></tr><tr><td class="top15-rank">15</td><td>শ্বসনে ATP, ক্রেবস চক্র ও অবাত শ্বসন</td><td><span class="chapter-tag plantphys">উদ্ভিদ শারীরতত্ত্ব</span></td><td class="top15-count">১৬</td><td class="top15-last">MBBS 24-25</td></tr></tbody>
+        </table>
+      </div>
+      <div class="top15-legend" aria-label="অধ্যায়ভিত্তিক রঙের নির্দেশিকা"><span class="chapter-tag micro">অণুজীব</span><span class="chapter-tag chem">কোষ রসায়ন</span><span class="chapter-tag algae">শৈবাল ও ছত্রাক</span><span class="chapter-tag plantphys">উদ্ভিদ শারীরতত্ত্ব</span><span class="chapter-tag cell">কোষ ও এর গঠন</span><span class="chapter-tag division">কোষ বিভাজন</span><span class="chapter-tag tissue">টিস্যু ও টিস্যুতন্ত্র</span></div>
+      <p class="top15-hint">একই অধ্যায়ের টপিকগুলো একই রঙে চিহ্নিত; মোট ৭টি অধ্যায়ের জন্য ৭টি আলাদা রঙ ব্যবহার করা হয়েছে। ছোট স্ক্রিনে টেবিলটি পাশে স্ক্রল করা যাবে।</p>
+    </section>
+
     <div class="metrics" id="dashboardMetrics" aria-label="Dataset overview"></div>
     <div class="notice"><strong>Two separate datasets:</strong> The chapter overview uses your supplied total of <b>520 medical questions</b> and the supplied chapter percentages. Inside each chapter, the original PDF topic analysis still displays printed M/MAT/D year references; those references are not individual-question counts and are not added to the 520-question total. A topic with no printed years remains <b>Unverified</b>, not zero.</div>
     <div class="section-head"><div><h2>Explore chapters</h2><p>Select a chapter to see its topic rankings, source references, and frequency chart.</p></div><div class="search-row" style="flex:1;max-width:520px"><div class="searchbox"><span class="search-icon" aria-hidden="true">⌕</span><input class="input" id="chapterSearch" type="search" placeholder="Search chapters or topics…" aria-label="Search chapters or topics"></div></div></div>
